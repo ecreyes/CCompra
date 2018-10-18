@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "852815391247",
+    "firebase_url": "https://ccompra-21287.firebaseio.com",
+    "project_id": "ccompra-21287",
+    "storage_bucket": "ccompra-21287.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852815391247:android:116a6d6d3fd1a2cd",
+        "android_client_info": {
+          "package_name": "com.example.ecreyes.ccompra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852815391247-rsbg9uqdtrsf34dnq3l45phomqre1ba3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecreyes.ccompra",
+            "certificate_hash": "d8dd1ada0cf90f595bcfdece709039e09668a912"
+          }
+        },
+        {
+          "client_id": "852815391247-fr3b0bs38u7hur7emh3638h4obu9tr2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfYuTvOdbtbQC52Kzm0nD8VdKu2IjNvng"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852815391247-fr3b0bs38u7hur7emh3638h4obu9tr2b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
