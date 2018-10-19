@@ -54,5 +54,22 @@
         android:layout_height="wrap_content"
         android:hint="Descripción"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subir Imagen"
+        android:id="@+id/btn_subir"
+        android:onClick="abrirGaleria"
+        />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/fimg"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Añadir Tienda"
+        />
 
 </LinearLayout>
