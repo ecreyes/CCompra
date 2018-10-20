@@ -23,12 +23,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre tienda"
+            android:id="@+id/nombreTienda"
             />
-        <EditText
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Descripción"
-            />
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción"
+                android:id="@+id/descripcionTienda"
+                />
+        </ScrollView>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Añadir Tienda"
+            android:id="@+id/btnTienda"
             />
     </LinearLayout>
 

@@ -30,50 +30,29 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import static android.content.ContentValues.TAG;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link CategoriaFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link CategoriaFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class CategoriaFragment extends Fragment implements View.OnClickListener{
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    //Se declara la view
     View v;
+    //campos utilizados en el layout
     Button btn_categoria;
     EditText et_categoria;
+    //referencias a la base de datos.
     FirebaseDatabase database;
     DatabaseReference categoriaRef;
-    StorageReference mStorage;
-    ProgressDialog mProgressDialog;
 
-    public final static  String LOGTAG = "HolaLogs";
+    //generado automaticamente.
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private OnFragmentInteractionListener mListener;
 
+    //constructor vacío
     public CategoriaFragment() {
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CategoriaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
+    //método generado automaticamente.
     public static CategoriaFragment newInstance(String param1, String param2) {
 
         CategoriaFragment fragment = new CategoriaFragment();
@@ -87,16 +66,18 @@ public class CategoriaFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mStorage = FirebaseStorage.getInstance().getReference();
+        //se conecta a la BD y obtiene la referencia a la tabla categoria.
         database = FirebaseDatabase.getInstance();
         categoriaRef = database.getReference(FirebaseReferences.CATEGORIA_REFERENCES);
+
+        //generado automaticamente
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
+    //método de Callback para el idauto de categoría
     public void readData(myCallBack myCallback) {
         categoriaRef.child("idauto").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -113,21 +94,23 @@ public class CategoriaFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //se asocia la view con el layout del fragmento.
         v = inflater.inflate(R.layout.fragment_categoria, container, false);
-        btn_categoria = (Button)  v.findViewById(R.id.btn_categoria);
-        et_categoria = (EditText) v.findViewById(R.id.et_categoria);
+        //se asignan los id a los campos
+        btn_categoria = v.findViewById(R.id.btn_categoria);
+        et_categoria = v.findViewById(R.id.et_categoria);
         btn_categoria.setOnClickListener(this);
-        et_categoria.setOnClickListener(this);
         return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    //generado automaticamente.
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
 
+    //generado automaticamente.
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -139,6 +122,7 @@ public class CategoriaFragment extends Fragment implements View.OnClickListener{
         }
     }
 
+    //generado automaticamente
     @Override
     public void onDetach() {
         super.onDetach();
@@ -151,39 +135,24 @@ public class CategoriaFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_categoria:
                 if ((et_categoria.getText().toString()).equals("")) {
                     Toast.makeText(getActivity(),"Categoria No Agregada",Toast.LENGTH_LONG).show();
+                }else{
+                    readData(new myCallBack() {
+                        @Override
+                        public void onCallback(int value) {
+                            categoriaRef.child("idauto").setValue(value+1);
+                            Categoria cat = new Categoria(value+1,et_categoria.getText().toString());
+                            categoriaRef.push().setValue(cat);
+                            et_categoria.setText("");
+                            Toast.makeText(getActivity(),"Categoría Agregada con Éxito",Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
-                readData(new myCallBack() {
-                    @Override
-                    public void onCallback(int value) {
-                        categoriaRef.child("idauto").setValue(value+1);
-                        Categoria cat = new Categoria(value+1,et_categoria.getText().toString());
-                        categoriaRef.push().setValue(cat);
-                        et_categoria.setText("");
-                        Toast.makeText(getActivity(),"Categoría Agregada con Éxito",Toast.LENGTH_LONG).show();
-                    }
-                });
                 break;
-            case R.id.et_categoria:
-
-                default:
-                    break;
         }
-        }
+    }
 
-
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    //generado automaticamente.
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
