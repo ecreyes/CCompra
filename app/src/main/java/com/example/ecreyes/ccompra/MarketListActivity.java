@@ -7,34 +7,20 @@ import android.widget.ListView;
 
 public class MarketListActivity extends AppCompatActivity {
     ListView mylist;
-    String text[] = new String[]{"Hello",
-            "This",
-            "is",
-            "Custom",
-            "ListView",
-            "This",
-            "is",
-            "Custom",
-            "ListView",
-            "This",
-            "is",
-            "Custom",
-            "ListView",
-            "This"};
-    int image[] = new int[]{R.drawable.about,
-            R.drawable.boost,
-            R.drawable.send,
-            R.drawable.settings,
-            R.drawable.share,
-            R.drawable.boost,
-            R.drawable.send,
-            R.drawable.settings,
-            R.drawable.share,
-            R.drawable.share,
-            R.drawable.boost,
-            R.drawable.send,
-            R.drawable.settings,
-            R.drawable.share};
+    String text[] = new String[]{"Tienda 1",
+            "Tienda 2",
+            "Tienda 3",
+            "Tienda 4",
+            "Tienda 5",
+            "Tienda 6",
+            "Tienda 7"};
+    int image[] = new int[]{R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

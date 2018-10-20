@@ -7,10 +7,9 @@
     tools:context=".MarketListActivity">
 
     <ListView
-        android:listSelector="#5698"
         android:id="@+id/mylist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="match_parent"
+        android:listSelector="#5698"></ListView>
 
 </android.support.constraint.ConstraintLayout>

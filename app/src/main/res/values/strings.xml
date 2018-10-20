@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CCompra</string>
     <string name="demo">demo</string>
+    <string name="ir_a_ver_tiendas">Ir a ver tiendas</string>
 </resources>
