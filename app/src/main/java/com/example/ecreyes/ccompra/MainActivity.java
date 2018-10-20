@@ -44,10 +44,24 @@ public class MainActivity extends AppCompatActivity {
     ImageView mImageView;
     ProgressDialog mProgressDialog;
 
+    // Boton para ir a la vista de tiendas
+
+    private Button botonTienda;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // boton tienda
+        botonTienda = (Button) findViewById(R.id.btn_tienda);
+        botonTienda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityMarketList();
+            }
+        });
+
         botonCategoria = findViewById(R.id.btn_categoria);
         etCategoria = findViewById(R.id.et_categoria);
         mUploadButton = findViewById(R.id.btn_subir);
@@ -58,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         categoriaRef = database.getReference(FirebaseReferences.CATEGORIA_REFERENCES);
+    }
+
+    // Abrir vista tienda
+
+    public void openActivityMarketList(){
+        Intent intent = new Intent(this, MarketListActivity.class);
+        startActivity(intent);
     }
 
     public void readData(myCallBack myCallback) {
