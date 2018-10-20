@@ -1,11 +1,11 @@
 package com.example.ecreyes.ccompra;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class MarketList extends AppCompatActivity {
-
+public class MarketListActivity extends AppCompatActivity {
     ListView mylist;
     String text[] = new String[]{"Hello",
             "This",
@@ -39,10 +39,9 @@ public class MarketList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_marketlist);
         mylist = (ListView) findViewById(R.id.mylist);
         MyCustomListAdapter myadapter = new MyCustomListAdapter(getApplicationContext(),image, text);
         mylist.setAdapter((ListAdapter) myadapter);
-
     }
 }
