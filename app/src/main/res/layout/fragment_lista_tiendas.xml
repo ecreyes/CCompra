@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".ListaTiendasFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/mylist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/vista_lista_de_tiendas" />
+        android:listSelector="#5698"></ListView>
+
 
 </FrameLayout>

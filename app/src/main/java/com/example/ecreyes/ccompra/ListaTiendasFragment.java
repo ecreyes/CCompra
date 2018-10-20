@@ -7,19 +7,31 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ListaTiendasFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ListaTiendasFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ListaTiendasFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    //Se declara la view
+    View v;
+    //variables
+    ListView mylist;
+    String text[] = new String[]{"Tienda 1",
+            "Tienda 2",
+            "Tienda 3",
+            "Tienda 4",
+            "Tienda 5",
+            "Tienda 6",
+            "Tienda 7"};
+    int image[] = new int[]{R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda,
+            R.drawable.pretienda};
+
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -33,15 +45,6 @@ public class ListaTiendasFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ListaTiendasFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ListaTiendasFragment newInstance(String param1, String param2) {
         ListaTiendasFragment fragment = new ListaTiendasFragment();
         Bundle args = new Bundle();
@@ -54,6 +57,8 @@ public class ListaTiendasFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -64,10 +69,13 @@ public class ListaTiendasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_tiendas, container, false);
+        v = inflater.inflate(R.layout.fragment_lista_tiendas, container, false);
+        mylist = (ListView) v.findViewById(R.id.mylist);
+        MyCustomListAdapter myadapter = new MyCustomListAdapter(getContext(),image, text);
+        mylist.setAdapter((ListAdapter) myadapter);
+        return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -91,16 +99,6 @@ public class ListaTiendasFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
