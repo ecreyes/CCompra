@@ -6,16 +6,16 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/categoria"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Lista de Categorias" />
+            android:icon="@drawable/ic_menu_categories"
+            android:title="@string/lista_de_categorias" />
         <item
             android:id="@+id/tienda_agregar"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Agregar Tienda" />
+            android:title="@string/agregar_tienda" />
         <item
             android:id="@+id/tienda_lista"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Lista de Tiendas" />
+            android:icon="@drawable/ic_menu_list"
+            android:title="@string/lista_de_tiendas" />
     </group>
 
 

@@ -1,17 +1,20 @@
 <resources>
-    <string name="app_name">CCompra</string>
+    <string name="app_name">C-compra</string>
   
     <string name="demo">demo</string>
     <string name="ir_a_ver_tiendas">Ir a ver tiendas</string>
-    <string name="title_activity_navigation_drawer">CCompra</string>
+    <string name="title_activity_navigation_drawer">C-compra</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">C-compra</string>
+    <!--<string name="nav_header_subtitle"></string>-->
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuración</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="vista_lista_de_tiendas">Vista Lista de Tiendas</string>
+    <string name="vista_lista_de_tiendas">Lista de Tiendas</string>
+    <string name="lista_de_categorias">Categorias</string>
+    <string name="agregar_tienda">Agregar Tienda</string>
+    <string name="lista_de_tiendas">Tiendas</string>
 </resources>
