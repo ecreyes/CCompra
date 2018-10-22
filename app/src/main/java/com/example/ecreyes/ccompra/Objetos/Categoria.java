@@ -21,7 +21,7 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getNombre() {
+    public  String getNombre() {
         return nombre;
     }
 
