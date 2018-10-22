@@ -12,9 +12,9 @@
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,25 +25,25 @@
                 android:id="@+id/imagen_tienda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:maxWidth="40dp"
                 android:layout_marginTop="0dp"
-                android:src="@drawable/default_image2"
+                android:adjustViewBounds="true"
 
-                />
+                android:maxWidth="40dp"
+                android:src="@drawable/default_image2"
+                tools:cropToPadding="false" />
 
             <ImageView
                 android:id="@+id/imagen_avatar"
-                android:layout_below="@id/imagen_tienda"
-                android:layout_width="wrap_content"
+                android:layout_width="61dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/imagen_tienda"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="1dp"
                 android:adjustViewBounds="true"
                 android:maxWidth="42dp"
                 android:maxHeight="42dp"
                 android:scaleType="fitCenter"
-                android:layout_marginLeft="3dp"
-                android:src="@drawable/user"
-                />
+                android:src="@drawable/user" />
 
 
             <TextView
@@ -56,19 +56,18 @@
                 android:layout_toRightOf="@id/imagen_avatar"
                 android:text="Titulo Tienda"
                 android:textSize="21dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#ffff"/>
 
             <TextView
                 android:id="@+id/lugar_tienda"
-                android:layout_width="313dp"
-                android:layout_height="wrap_content"
+                android:layout_width="293dp"
+                android:layout_height="18dp"
                 android:layout_below="@id/titulo_tienda"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="-4dp"
                 android:layout_toRightOf="@id/imagen_avatar"
-                android:text="Lugar" />
-
-
+                android:text="Ubicación" />
 
 
         </RelativeLayout>
@@ -88,15 +87,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFD298">
+            android:background="#ffffff">
 
             <TextView
                 android:id="@+id/text_dueno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dueño/ña: "
-                android:textStyle="bold"
-                />
+                android:text="Dueño(a): "
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dueno"
@@ -104,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:text="Juan Perez"
                 android:layout_marginStart="70dp"
-                />
+                android:layout_marginLeft="70dp" />
 
 
             <TextView
@@ -136,13 +134,14 @@
                 android:background="@drawable/button_shape"
 
                 />
+
             <View
                 android:id="@+id/separador1"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="3sp"
                 android:layout_below="@+id/btn_abierto"
                 android:layout_marginTop="5dp"
-                android:background="@android:color/holo_green_light"/>
+                android:background="#369e97" />
 
             <ImageView
                 android:id="@+id/imagen1"
