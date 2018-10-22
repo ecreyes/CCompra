@@ -19,8 +19,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFD298"
-            >
+            android:background="@drawable/main_gradient">
+
             <ImageView
                 android:id="@+id/imagen_tienda"
                 android:layout_width="match_parent"
@@ -51,21 +51,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imagen_tienda"
-                android:layout_toRightOf="@id/imagen_avatar"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/imagen_avatar"
                 android:text="Titulo Tienda"
                 android:textSize="21dp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/lugar_tienda"
-                android:layout_width="match_parent"
+                android:layout_width="313dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/titulo_tienda"
-                android:layout_toRightOf="@id/imagen_avatar"
-                android:text="Lugar"
                 android:layout_marginLeft="10dp"
-                />
+                android:layout_marginTop="0dp"
+                android:layout_toRightOf="@id/imagen_avatar"
+                android:text="Lugar" />
 
 
 
