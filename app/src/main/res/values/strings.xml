@@ -18,4 +18,7 @@
     <string name="agregar_tienda">Agregar Tienda</string>
     <string name="lista_de_tiendas">Tiendas</string>
     <string name="una_tienda">Una Tienda</string>
+    <string name="subir_imagen">Subir Imagen</string>
+    <string name="a_adir_tienda">Añadir tienda</string>
+    <string name="nombre_tienda">Nombre tienda</string>
 </resources>

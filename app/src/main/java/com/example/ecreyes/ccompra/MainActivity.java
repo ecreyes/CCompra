@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Boton para ir a la vista de tiendas
 
-    private Button botonTienda;
+    //private Button botonTienda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // boton tienda
-        /*
-        botonTienda = (Button) findViewById(R.id.btn_tienda);
+
+       /*botonTienda = (Button) findViewById(R.id.btn_tienda);
         botonTienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivityMarketList();
             }
-        });*/
-
+        });
+*/
         botonCategoria = findViewById(R.id.btn_categoria);
         etCategoria = findViewById(R.id.et_categoria);
         mUploadButton = findViewById(R.id.btn_subir);
@@ -77,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Abrir vista tienda
 
-    public void openActivityMarketList(){
+    /*public void openActivityMarketList(){
         Intent intent = new Intent(this, MarketListActivity.class);
         startActivity(intent);
-    }
+    }*/
 
     public void readData(myCallBack myCallback) {
         categoriaRef.child("idauto").addListenerForSingleValueEvent(new ValueEventListener() {
