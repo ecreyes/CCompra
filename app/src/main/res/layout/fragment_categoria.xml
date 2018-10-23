@@ -6,42 +6,49 @@
     tools:context=".CategoriaFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ejemplo Añadir categorias"
-        android:textSize="24sp"
-        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#028577"
+            android:gravity="center"
+            android:text="Añadir categorias"
+            android:textColor="#FFFF"
+            android:textSize="24sp"
+            tools:background="@drawable/ic_launcher_background" />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/et_categoria"
-            android:hint="Nombre Categoría"
-            />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_categoria"
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:hint="Nombre Categoría" />
+
+        </LinearLayout>
 
         <Button
+            android:id="@+id/btn_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_selector"
             android:text="Añadir Categoría"
-            android:id="@+id/btn_categoria"
-            android:layout_weight="1"
-            />
-
-    </LinearLayout>
+            android:textAllCaps="false"
+            android:textColor="#FFFF" />
     </LinearLayout>
 </FrameLayout>

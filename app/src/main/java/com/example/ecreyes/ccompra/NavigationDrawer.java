@@ -16,6 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class NavigationDrawer extends AppCompatActivity
+/*<<<<<<< design
+        implements NavigationView.OnNavigationItemSelectedListener,
+        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener, VistaTiendaFragment.OnFragmentInteractionListener {
+*/
         implements NavigationView.OnNavigationItemSelectedListener, ListaCategoriaFragment.OnFragmentInteractionListener,
         AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener {
 
@@ -30,7 +34,7 @@ public class NavigationDrawer extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Alertar de robo", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -96,9 +100,15 @@ public class NavigationDrawer extends AppCompatActivity
             fragment = new ListaTiendasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
+/*<<<<<<< design
+        } else if (id == R.id.vista_tienda) {
+            fragment = new VistaTiendaFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
+======= */
         } else if (id == R.id.lista_categoria){
             fragment = new ListaCategoriaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
+
             FragmentSeleccionado = true;
         }
         if (FragmentSeleccionado){

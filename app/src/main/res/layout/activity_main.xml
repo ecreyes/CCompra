@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,73 +11,86 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ejemplo Añadir categorias"
-        android:textSize="24sp"
-        />
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/et_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/et_categoria"
-            android:hint="Nombre Categoría"
-            />
+            android:hint="Nombre Categoría" />
 
         <Button
+            android:id="@+id/btn_categoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Añadir Categoría"
-            android:id="@+id/btn_categoria"
-            android:onClick="pressCategoria"
             android:layout_weight="1"
-            />
+            android:onClick="pressCategoria"
+            android:text="Añadir Categoría" />
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ejemplo añadir tienda"
-        android:textSize="24sp"
-        />
+        android:textSize="24sp" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre tienda"
-        />
+        android:hint="Nombre tienda" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Subir Imagen"
-        android:id="@+id/btn_subir"
-        android:onClick="abrirGaleria"
-        />
+        android:hint="Descripción" />
 
     <Button
+        android:id="@+id/btn_subir"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/button_shape"
+        android:onClick="abrirGaleria"
+        android:text="Subir Imagen"
+        android:textAllCaps="false"
+        android:textColor="#FFFF"
+        android:textStyle="bold" />
+
+    <!--<Button
         android:id="@+id/btn_tienda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ir_a_ver_tiendas" />
+        android:text="@string/ir_a_ver_tiendas" /> -->
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
         android:id="@+id/fimg"
-        />
+        android:layout_width="140dp"
+        android:layout_height="128dp"
+        android:cropToPadding="false"
+        app:srcCompat="@drawable/pretienda" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/button_shape"
         android:text="Añadir Tienda"
-        />
+        android:textAllCaps="false"
+        android:textColor="#FFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

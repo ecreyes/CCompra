@@ -1,6 +1,7 @@
 package com.example.ecreyes.ccompra;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
@@ -138,6 +139,8 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle("Tienda agregada satisfactoriamente");
         switch (v.getId()){
             case R.id.btn_subir:
                 Intent intent = new Intent(Intent.ACTION_PICK);
@@ -160,7 +163,14 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
             default:
                 break;
         }
+        alert.create().show();
     }
+
+    public void showAlertDialog(View v){
+
+
+    }
+
 
     //método se ejecuta una vez que se carga la imagen.
     @Override
