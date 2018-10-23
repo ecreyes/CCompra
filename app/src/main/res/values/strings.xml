@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">C-compra</string>
 
     <string name="demo">demo</string>
@@ -21,4 +22,5 @@
     <string name="subir_imagen">Subir Imagen</string>
     <string name="a_adir_tienda">Añadir tienda</string>
     <string name="nombre_tienda">Nombre tienda</string>
+    <string name="title_activity_recycler">RecyclerActivity</string>
 </resources>
