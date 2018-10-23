@@ -16,6 +16,11 @@
             android:id="@+id/tienda_lista"
             android:icon="@drawable/ic_menu_list"
             android:title="@string/lista_de_tiendas" />
+        <item
+            android:id="@+id/vista_tienda"
+            android:icon="@drawable/ic_menu_list"
+            android:title="@string/una_tienda" />
+
     </group>
 
 

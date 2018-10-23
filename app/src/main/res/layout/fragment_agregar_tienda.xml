@@ -14,9 +14,12 @@
         android:orientation="vertical"
         tools:context=".AgregarTiendaFragment">
         <TextView
+            android:background="#028577"
+            android:textColor="#FFFF"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ejemplo añadir tienda"
+            android:text="Añadir tienda"
             android:textSize="24sp"
             />
         <EditText
@@ -36,17 +39,24 @@
                 />
         </ScrollView>
         <Button
+            android:background="@drawable/button_selector"
+            android:textColor="#FFFF"
+            android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Subir Imagen"
             android:id="@+id/btn_subir"
             />
         <ImageView
+            android:layout_gravity="center"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/fimg"
             />
         <Button
+            android:background="@drawable/button_selector"
+            android:textColor="#FFFF"
+            android:textAllCaps="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Añadir Tienda"

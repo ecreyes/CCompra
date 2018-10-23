@@ -17,7 +17,7 @@ import android.view.MenuItem;
 
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener {
+        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener, VistaTiendaFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +94,10 @@ public class NavigationDrawer extends AppCompatActivity
             FragmentSeleccionado = true;
         } else if (id == R.id.tienda_lista) {
             fragment = new ListaTiendasFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
+            FragmentSeleccionado = true;
+        } else if (id == R.id.vista_tienda) {
+            fragment = new VistaTiendaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
         }
