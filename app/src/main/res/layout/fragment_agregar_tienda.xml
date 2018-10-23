@@ -60,7 +60,9 @@
             android:id="@+id/nombreTienda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:hint="@string/nombre_tienda" />
 
@@ -72,6 +74,8 @@
                 android:id="@+id/descripcionTienda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginBottom="20dp"
                 android:hint="Descripción"
                 android:inputType="" />
@@ -81,6 +85,7 @@
             android:id="@+id/btnTienda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:background="@drawable/button_selector"
             android:text="Añadir Tienda"
             android:textAllCaps="false"
