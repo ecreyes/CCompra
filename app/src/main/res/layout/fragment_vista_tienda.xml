@@ -42,8 +42,12 @@
                     android:layout_width="61dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imagen_tienda"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="1dp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginBottom="10sp"
                     android:adjustViewBounds="true"
                     android:maxWidth="42dp"
                     android:maxHeight="42dp"
@@ -92,6 +96,10 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="10sp"
                 android:background="#ffffff">
 
                 <TextView
@@ -105,93 +113,93 @@
                     android:id="@+id/dueno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Juan Perez"
                     android:layout_marginStart="70dp"
-                    android:layout_marginLeft="70dp" />
+                    android:layout_marginLeft="70dp"
+                    android:text="Juan Perez" />
 
 
                 <TextView
                     android:id="@+id/text_descripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Descripción"
                     android:layout_below="@id/text_dueno"
-                    android:textStyle="bold"
-                    />
+                    android:text="Descripción:"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/descripcion_tienda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_descripcion"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra, velit sit amet consequat tincidunt."
-                    />
+                    android:layout_marginBottom="10sp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra, velit sit amet consequat tincidunt." />
+
                 <Button
                     android:id="@+id/btn_abierto"
                     android:layout_width="300dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="3dip"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@id/descripcion_tienda"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dip"
+                    android:background="@drawable/button_selector"
+                    android:clickable="false"
                     android:text="Abierta"
                     android:textAllCaps="false"
-                    android:textStyle="bold"
-                    android:textColor="#FFFF"
-                    android:background="@drawable/button_selector"
 
-                    />
+                    android:textColor="#FFFF"
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/separador1"
                     android:layout_width="match_parent"
                     android:layout_height="3sp"
                     android:layout_below="@+id/btn_abierto"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginRight="20sp"
                     android:background="#369e97" />
 
                 <ImageView
                     android:id="@+id/imagen1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/default_image"
-                    android:adjustViewBounds="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/separador1"
                     android:layout_marginLeft="50sp"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="true"
                     android:maxWidth="80dp"
                     android:maxHeight="60dp"
                     android:scaleType="fitCenter"
-                    android:layout_below="@id/separador1"
-                    />
+                    android:src="@drawable/default_image" />
 
                 <ImageView
                     android:id="@+id/imagen2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/default_image"
+                    android:layout_below="@id/separador1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@id/imagen1"
                     android:adjustViewBounds="true"
-                    android:layout_marginTop="20dp"
                     android:maxWidth="80dp"
                     android:maxHeight="60dp"
-                    android:layout_marginLeft="20sp"
                     android:scaleType="fitCenter"
-                    android:layout_below="@id/separador1"
-                    android:layout_toRightOf="@id/imagen1"
-                    />
+                    android:src="@drawable/default_image" />
 
                 <ImageView
                     android:id="@+id/imagen3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/default_image"
-                    android:adjustViewBounds="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/separador1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginBottom="20dp"
+                    android:layout_toRightOf="@id/imagen2"
+                    android:adjustViewBounds="true"
                     android:maxWidth="80dp"
                     android:maxHeight="60dp"
                     android:scaleType="fitCenter"
-                    android:layout_marginLeft="20sp"
-                    android:layout_below="@id/separador1"
-                    android:layout_toRightOf="@id/imagen2"
-                    />
+                    android:src="@drawable/default_image" />
 
 
             </RelativeLayout>
