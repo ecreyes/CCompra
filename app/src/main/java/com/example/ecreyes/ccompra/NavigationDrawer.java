@@ -100,16 +100,17 @@ public class NavigationDrawer extends AppCompatActivity
             fragment = new ListaTiendasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
-/*<<<<<<< design
+
         } else if (id == R.id.vista_tienda) {
             fragment = new VistaTiendaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
-======= */
+         /*<<<<<<< design
         } else if (id == R.id.lista_categoria){
             fragment = new ListaCategoriaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
 
             FragmentSeleccionado = true;
+               ======= */
         }
         if (FragmentSeleccionado){
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment).commit();
