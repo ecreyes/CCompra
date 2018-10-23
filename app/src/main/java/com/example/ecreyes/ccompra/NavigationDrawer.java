@@ -16,7 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class NavigationDrawer extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
+        implements NavigationView.OnNavigationItemSelectedListener, ListaCategoriaFragment.OnFragmentInteractionListener,
         AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener {
 
     @Override
@@ -95,6 +95,10 @@ public class NavigationDrawer extends AppCompatActivity
         } else if (id == R.id.tienda_lista) {
             fragment = new ListaTiendasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
+            FragmentSeleccionado = true;
+        } else if (id == R.id.lista_categoria){
+            fragment = new ListaCategoriaFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
             FragmentSeleccionado = true;
         }
         if (FragmentSeleccionado){
