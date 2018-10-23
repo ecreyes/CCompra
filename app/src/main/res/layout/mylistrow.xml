@@ -7,9 +7,9 @@
 
     <ImageView
         android:id="@+id/listimage"
-        android:layout_width="129dp"
-        android:layout_height="104dp"
-        android:layout_margin="10sp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20sp"
 
         />
 
