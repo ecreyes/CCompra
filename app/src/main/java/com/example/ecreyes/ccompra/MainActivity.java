@@ -54,13 +54,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // boton tienda
+        /*
         botonTienda = (Button) findViewById(R.id.btn_tienda);
         botonTienda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivityMarketList();
             }
-        });
+        });*/
 
         botonCategoria = findViewById(R.id.btn_categoria);
         etCategoria = findViewById(R.id.et_categoria);
