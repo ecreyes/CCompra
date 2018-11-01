@@ -24,6 +24,10 @@
             android:id="@+id/iniciar_sesion"
             android:icon="@drawable/ic_user_profile"
             android:title="Iniciar sesión" />
+        <item
+            android:id="@+id/registro"
+            android:icon="@drawable/user"
+            android:title="Registro"/>
     </group>
 
 

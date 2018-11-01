@@ -21,7 +21,7 @@ public class NavigationDrawer extends AppCompatActivity
         AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener, VistaTiendaFragment.OnFragmentInteractionListener {
 */
         implements NavigationView.OnNavigationItemSelectedListener, ListaCategoriaFragment.OnFragmentInteractionListener,
-        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener {
+        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener,RegistroFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +111,10 @@ public class NavigationDrawer extends AppCompatActivity
 
             FragmentSeleccionado = true;
                ======= */
+        } else if (id == R.id.registro){
+            fragment = new RegistroFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
+            FragmentSeleccionado = true;
         }
         if (FragmentSeleccionado){
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment).commit();
