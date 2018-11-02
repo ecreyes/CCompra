@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -47,6 +48,7 @@ public class RegistroFragment extends Fragment implements View.OnClickListener {
     EditText et_email;
     EditText et_password;
     Button btn_registro;
+    TextView link_volver;
 
     private OnFragmentInteractionListener mListener;
 
@@ -94,6 +96,16 @@ public class RegistroFragment extends Fragment implements View.OnClickListener {
         btn_registro = (Button) v.findViewById(R.id.btn_registro);
         btn_registro.setOnClickListener(this);
 
+        //Link para volver a layout de login
+        link_volver = (TextView)v.findViewById(R.id.link_volver);
+        link_volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_registro,new LoginFragment());
+                fr.commit();
+            }
+        });
         return v;
     }
 
