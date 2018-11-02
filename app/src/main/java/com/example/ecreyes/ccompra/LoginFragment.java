@@ -6,12 +6,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.util.Util;
@@ -43,6 +45,7 @@ public class LoginFragment extends Fragment implements  View.OnClickListener{
     EditText et_login_email;
     EditText et_login_password;
     FirebaseAuth firebaseAuth;
+    TextView link_signup;
 
     private OnFragmentInteractionListener mListener;
 
@@ -86,6 +89,18 @@ public class LoginFragment extends Fragment implements  View.OnClickListener{
         et_login_email  = (EditText) v.findViewById(R.id.et_login_email);
         et_login_password = (EditText) v.findViewById(R.id.et_login_password);
         btn_login.setOnClickListener(this);
+
+        //Link para ir a layout de registro
+        link_signup = (TextView)v.findViewById(R.id.link_signup);
+        link_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragment_login,new RegistroFragment());
+                fr.commit();
+            }
+        });
+
         return v;
     }
 

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/my_gradient_drawable"
     android:orientation="vertical"
+    android:id="@+id/fragment_registro"
     tools:context=".RegistroFragment">
 
     <LinearLayout
@@ -70,15 +71,28 @@
                     android:id="@+id/btn_registro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/button_shape"
+                    android:background="@drawable/button_shapepink"
                     android:text="Registrar"
                     android:textSize="15dp"
                     android:textAllCaps="false"
                     android:textColor="#FFFF" />
+
+                <TextView android:id="@+id/link_volver"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="Volver"
+                    android:textColor="#FFFF"
+                    android:gravity="center"
+                    android:textSize="16dip"
+                    android:linksClickable="true"
+                    />
+
+
             </LinearLayout>
 
 
