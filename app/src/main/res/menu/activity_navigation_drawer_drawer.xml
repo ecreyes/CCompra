@@ -28,6 +28,10 @@
             android:id="@+id/registro"
             android:icon="@drawable/user"
             android:title="Registro"/>
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/user"
+            android:title="Ingresar al Sistema" />
     </group>
 
 
