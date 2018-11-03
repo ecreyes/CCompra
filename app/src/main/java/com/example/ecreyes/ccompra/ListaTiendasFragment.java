@@ -1,14 +1,19 @@
 package com.example.ecreyes.ccompra;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import com.example.ecreyes.ccompra.Objetos.DetalleTienda;
 
 
 public class ListaTiendasFragment extends Fragment {
@@ -73,6 +78,16 @@ public class ListaTiendasFragment extends Fragment {
         mylist = (ListView) v.findViewById(R.id.mylist);
         MyCustomListAdapter myadapter = new MyCustomListAdapter(getContext(),image, text);
         mylist.setAdapter((ListAdapter) myadapter);
+        mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("TIENDA",text[position]);
+                Intent myintent = new Intent(view.getContext(),DetalleTienda.class);
+                myintent.putExtra("firstKeyName",text[position]);
+                myintent.putExtra("secondKeyName","SecondKeyValue");
+                startActivityForResult(myintent,0);
+            }
+        });
         return v;
     }
 

@@ -26,7 +26,8 @@
         <activity android:name=".MarketListActivity" />
         <activity
             android:name=".UserProfileActivity"
-            android:label="@string/title_activity_user_profile"></activity>
+            android:label="@string/title_activity_user_profile" />
+        <activity android:name=".Objetos.DetalleTienda"></activity>
     </application>
 
 </manifest>
