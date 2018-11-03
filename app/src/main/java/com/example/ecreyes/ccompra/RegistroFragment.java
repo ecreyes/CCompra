@@ -2,6 +2,7 @@ package com.example.ecreyes.ccompra;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -127,6 +128,8 @@ public class RegistroFragment extends Fragment implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(getContext(), "Usuario Creado", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getContext(), UserProfileActivity.class));
+
                         }
                             else{
                             FirebaseAuthException e = (FirebaseAuthException )task.getException();
