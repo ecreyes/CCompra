@@ -220,8 +220,6 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
                         Log.d(TAG_TIENDA,downloadUri+"");
                         Glide.with(AgregarTiendaProfileFragment.this)
                                 .load(downloadUri)
-                                .fitCenter()
-                                .centerCrop()
                                 .into(mImageView);
                     } else {
                         // Handle failures
