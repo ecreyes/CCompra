@@ -9,10 +9,13 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.ecreyes.ccompra.Objetos.FirebaseReferences;
 import com.example.ecreyes.ccompra.Objetos.Tienda;
@@ -44,6 +47,7 @@ public class TiendasFragment extends Fragment {
     RecyclerView mRecycler;
     View view;
     FirebaseRecyclerAdapter<Tienda, TiendasRecyclerViewAdapter.ViewHolder> mAdapter;
+    EditText editText;
 
     public ArrayList<Tienda> tiendas;
     //public TiendasRecyclerViewAdapter mTadapter;
@@ -68,41 +72,33 @@ public class TiendasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_tiendas_list, container, false);
-        Log.w("OnCV", String.valueOf(container.getContext()));
+        //Log.w("OnCV", String.valueOf(container.getContext()));
         mRecycler = view.findViewById(R.id.list_recycler);
-
+        editText = (EditText)view.findViewById(R.id.search_text);
         //mRecycler.setHasFixedSize(true);
-
         tiendas = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference(FirebaseReferences.TIENDA_REFERENCES);
+        search("");
 
-        mDatabase.addValueEventListener(new ValueEventListener() {
+        editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChildren()){
-                    for (DataSnapshot ds: dataSnapshot.getChildren()){
-                        //final Tienda t = ds.getValue(Tienda.class);
-                        //tiendas.add(t);
-                        if (ds.child("estado").getValue(Boolean.class)!=null){
-                            final Tienda t = ds.getValue(Tienda.class);
-                            tiendas.add(t);
-                            Log.w("T", String.valueOf(t.getNombre()));
-                        }
-                    }
-                    TiendasRecyclerViewAdapter mTadapter = new TiendasRecyclerViewAdapter(tiendas, getContext());
-                    Log.i("mAC/mRe", String.valueOf(getContext()));
-                    mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    mRecycler.setAdapter(mTadapter);
-                    mTadapter.notifyDataSetChanged();
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!s.toString().isEmpty()){
+                    search(s.toString());
                 }
-
+                else {
+                    search("");
+                }
             }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-
         });
 
 
@@ -128,6 +124,40 @@ public class TiendasFragment extends Fragment {
         mListener = null;
     }
 
+    private void search(String s){
+        mDatabase.
+                orderByChild("nombre").
+                startAt(s).
+                endAt(s + '\uf8ff').addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                tiendas.clear();
+                if (dataSnapshot.hasChildren()){
+                    for (DataSnapshot ds: dataSnapshot.getChildren()){
+                        //final Tienda t = ds.getValue(Tienda.class);
+                        //tiendas.add(t);
+                        if (ds.child("estado").getValue(Boolean.class)!=null){
+                            final Tienda t = ds.getValue(Tienda.class);
+                            tiendas.add(t);
+                            //Log.w("T", String.valueOf(t.getNombre()));
+                        }
+                    }
+                    TiendasRecyclerViewAdapter mTadapter = new TiendasRecyclerViewAdapter(tiendas, getContext());
+                    //Log.i("mAC/mRe", String.valueOf(getContext()));
+                    mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+                    mRecycler.setAdapter(mTadapter);
+                    mTadapter.notifyDataSetChanged();
+
+                }
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+        });
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
