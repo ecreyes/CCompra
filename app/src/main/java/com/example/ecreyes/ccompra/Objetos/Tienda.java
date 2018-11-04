@@ -7,16 +7,18 @@ public class Tienda {
     private String descripcion;
     private String uri;
     private String email;
+    private String categoria;
 
     public Tienda(){}
 
-    public Tienda(int id,boolean estado,String nombre,String descripcion,String uri, String email){
+    public Tienda(int id,boolean estado,String nombre,String descripcion,String uri, String email, String categoria){
         this.id = id;
         this.estado = estado;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.uri = uri;
         this.email = email;
+        this.categoria = categoria;
     }
 
     public int getId() {
@@ -62,4 +64,8 @@ public class Tienda {
     public String getEmail() {return email;}
 
     public  void setEmail(String email) {this.email = email;}
+
+    public  void setCategoria(String categoria) {this.categoria = categoria;}
+
+    public String getCategoria() {return  categoria;}
 }

@@ -25,9 +25,10 @@ public class UserProfileActivity extends AppCompatActivity implements AgregarTie
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
+            fragment = new AgregarTiendaProfileFragment();
+            loadFragment(fragment);
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
                     fragment = new AgregarTiendaProfileFragment();
                     loadFragment(fragment);
                     return true;

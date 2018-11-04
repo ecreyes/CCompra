@@ -69,8 +69,13 @@
                 android:layout_marginBottom="20dp"
                 android:hint="Descripción"
                 android:inputType="" />
-        </ScrollView>
 
+
+        </ScrollView>
+        <Spinner
+            android:id="@+id/categoria_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnTienda"
             android:layout_width="match_parent"
@@ -80,6 +85,8 @@
             android:text="Añadir Tienda"
             android:textAllCaps="false"
             android:textColor="#FFFF" />
+
+
     </LinearLayout>
 
 </FrameLayout>

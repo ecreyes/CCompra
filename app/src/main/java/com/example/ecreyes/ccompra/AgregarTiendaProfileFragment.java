@@ -14,9 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.ecreyes.ccompra.Objetos.FirebaseReferences;
@@ -45,7 +49,7 @@ import com.google.firebase.storage.UploadTask;
  * Use the {@link AgregarTiendaProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AgregarTiendaProfileFragment extends Fragment implements  View.OnClickListener{
+public class AgregarTiendaProfileFragment extends Fragment implements  View.OnClickListener, AdapterView.OnItemSelectedListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG_TIENDA = "TIENDA";
@@ -66,6 +70,7 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
     Uri downloadUri;
     EditText ntienda;
     EditText ndescripcion;
+    Spinner spinner;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -114,12 +119,17 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_agregar_tienda, container, false);
+        v = inflater.inflate(R.layout.fragment_agregar_tienda_profile, container, false);
         btn_subir = v.findViewById(R.id.btn_subir);
         mImageView = v.findViewById(R.id.fimg);
         addTienda = v.findViewById(R.id.btnTienda);
         ntienda = v.findViewById(R.id.nombreTienda);
         ndescripcion = v.findViewById(R.id.descripcionTienda);
+        spinner = v.findViewById(R.id.categoria_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.categoria_array, android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
         btn_subir.setOnClickListener(this);
         addTienda.setOnClickListener(this);
         return v;
@@ -167,7 +177,7 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
                     @Override
                     public void onCallback(int value) {
                         tiendaRef.child("idauto").setValue(value+1);
-                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"",user.getEmail());
+                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"",user.getEmail(),spinner.getSelectedItem().toString());
                         tiendaRef.push().setValue(tienda);
                         ntienda.setText("");
                         ndescripcion.setText("");
@@ -245,6 +255,20 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
         });
 
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String categoria = spinner.getSelectedItem().toString();
+        Toast.makeText(getContext(),categoria,Toast.LENGTH_LONG).show();
+    }
+
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

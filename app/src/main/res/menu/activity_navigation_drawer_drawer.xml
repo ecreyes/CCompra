@@ -21,17 +21,14 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/agregar_tienda" />
         <item
-            android:id="@+id/iniciar_sesion"
+            android:id="@+id/login"
             android:icon="@drawable/ic_user_profile"
             android:title="Iniciar sesión" />
         <item
             android:id="@+id/registro"
-            android:icon="@drawable/user"
+            android:icon="@drawable/ic_user_profile"
             android:title="Registro"/>
-        <item
-            android:id="@+id/login"
-            android:icon="@drawable/user"
-            android:title="Ingresar al Sistema" />
+
     </group>
 
 
