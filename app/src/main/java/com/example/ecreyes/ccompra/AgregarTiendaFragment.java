@@ -209,8 +209,6 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
                         Log.d(TAG_TIENDA,downloadUri+"");
                         Glide.with(AgregarTiendaFragment.this)
                                 .load(downloadUri)
-                                .fitCenter()
-                                .centerCrop()
                                 .into(mImageView);
                     } else {
                         // Handle failures

@@ -16,13 +16,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class NavigationDrawer extends AppCompatActivity
-/*<<<<<<< design
-        implements NavigationView.OnNavigationItemSelectedListener,
-        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener, VistaTiendaFragment.OnFragmentInteractionListener {
-*/
-        implements NavigationView.OnNavigationItemSelectedListener, ListaCategoriaFragment.OnFragmentInteractionListener,
-        AgregarTiendaFragment.OnFragmentInteractionListener, CategoriaFragment.OnFragmentInteractionListener,ListaTiendasFragment.OnFragmentInteractionListener
-        ,RegistroFragment.OnFragmentInteractionListener,LoginFragment.OnFragmentInteractionListener {
+
+        implements  NavigationView.OnNavigationItemSelectedListener,
+                    ListaCategoriaFragment.OnFragmentInteractionListener,
+                    AgregarTiendaFragment.OnFragmentInteractionListener,
+                    CategoriaFragment.OnFragmentInteractionListener,
+                    ListaTiendasFragment.OnFragmentInteractionListener,
+                    RegistroFragment.OnFragmentInteractionListener,
+                    TiendasFragment.OnFragmentInteractionListener,
+                    LoginFragment.OnFragmentInteractionListener{
+          
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +105,7 @@ public class NavigationDrawer extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
         } else if (id == R.id.tienda_lista) {
-            fragment = new ListaTiendasFragment();
+            fragment = new TiendasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
 
