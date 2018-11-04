@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MarketListActivity"></activity>
-        <activity android:name=".Objetos.DetalleTienda"></activity>
+        <activity android:name=".DetalleTienda"></activity>
         <activity
             android:name=".UserProfileActivity"
             android:label="@string/title_activity_user_profile"

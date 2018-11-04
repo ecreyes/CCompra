@@ -1,198 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MarketListActivity"
-    android:background="@drawable/background_general"
-    >
-
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- Here you put the rest of your current view-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MarketListActivity"
+        android:background="@drawable/background_general"
+        >
 
-        <RelativeLayout
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/main_gradient">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp">
 
-            <ImageView
-                android:id="@+id/imagen_tienda"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:adjustViewBounds="true"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_gradient">
 
-                android:maxWidth="40dp"
-                android:src="@drawable/default_image2"
-                tools:cropToPadding="false" />
+                <ImageView
+                    android:id="@+id/imagen_tienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:adjustViewBounds="true"
 
-            <ImageView
-                android:id="@+id/imagen_avatar"
-                android:layout_width="61dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imagen_tienda"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="1dp"
-                android:adjustViewBounds="true"
-                android:maxWidth="42dp"
-                android:maxHeight="42dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/user" />
+                    android:maxWidth="40dp"
+                    android:src="@drawable/default_image2"
+                    tools:cropToPadding="false" />
 
-
-            <TextView
-                android:id="@+id/titulo_tienda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imagen_tienda"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="2dp"
-                android:layout_toRightOf="@id/imagen_avatar"
-                android:text="Titulo Tienda"
-                android:textSize="21dp"
-                android:textStyle="bold"
-                android:textColor="#ffff"/>
-
-            <TextView
-                android:id="@+id/lugar_tienda"
-                android:layout_width="293dp"
-                android:layout_height="18dp"
-                android:layout_below="@id/titulo_tienda"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="-4dp"
-                android:layout_toRightOf="@id/imagen_avatar"
-                android:text="Ubicación" />
+                <ImageView
+                    android:id="@+id/imagen_avatar"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imagen_tienda"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="1dp"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="42dp"
+                    android:maxHeight="42dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/user" />
 
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/titulo_tienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imagen_tienda"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@id/imagen_avatar"
+                    android:text="Titulo Tienda"
+                    android:textSize="21dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffff"/>
 
-    </android.support.v7.widget.CardView>
+                <TextView
+                    android:id="@+id/lugar_tienda"
+                    android:layout_width="293dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@id/titulo_tienda"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-4dp"
+                    android:layout_toRightOf="@id/imagen_avatar"
+                    android:text="Ubicación" />
 
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        style="@style/CardView.Light"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp">
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
 
 
-        <RelativeLayout
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/CardView.Light"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffffff">
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp">
 
-            <TextView
-                android:id="@+id/text_dueno"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dueño(a): "
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:background="#ffffff">
 
-            <TextView
-                android:id="@+id/dueno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Juan Perez"
-                android:layout_marginStart="70dp"
-                android:layout_marginLeft="70dp" />
+                <TextView
+                    android:id="@+id/text_dueno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dueño(a): "
+                    android:textStyle="bold" />
 
-
-            <TextView
-                android:id="@+id/text_descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Descripción"
-                android:layout_below="@id/text_dueno"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/descripcion_tienda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text_descripcion"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra, velit sit amet consequat tincidunt."
-                />
-            <Button
-                android:id="@+id/btn_abierto"
-                android:layout_width="300dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="3dip"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/descripcion_tienda"
-                android:text="Abierta"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:textColor="#FFFF"
-                android:background="@drawable/button_shape"
-
-                />
-
-            <View
-                android:id="@+id/separador1"
-                android:layout_width="match_parent"
-                android:layout_height="3sp"
-                android:layout_below="@+id/btn_abierto"
-                android:layout_marginTop="5dp"
-                android:background="#369e97" />
-
-            <ImageView
-                android:id="@+id/imagen1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/default_image"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:maxWidth="80dp"
-                android:maxHeight="60dp"
-                android:scaleType="fitCenter"
-                android:layout_below="@id/separador1"
-                />
-
-            <ImageView
-                android:id="@+id/imagen2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/default_image"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="20dp"
-                android:maxWidth="80dp"
-                android:maxHeight="60dp"
-                android:layout_marginLeft="20dp"
-                android:scaleType="fitCenter"
-                android:layout_below="@id/separador1"
-                android:layout_toRightOf="@id/imagen1"
-                />
-
-            <ImageView
-                android:id="@+id/imagen3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/default_image"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:maxWidth="80dp"
-                android:maxHeight="60dp"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="20dp"
-                android:layout_below="@id/separador1"
-                android:layout_toRightOf="@id/imagen2"
-                />
+                <TextView
+                    android:id="@+id/dueno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Juan Perez"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginLeft="70dp" />
 
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/text_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:layout_below="@id/text_dueno"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/descripcion_tienda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_descripcion"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra, velit sit amet consequat tincidunt."
+                    />
+                <Button
+                    android:id="@+id/btn_abierto"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="3dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/descripcion_tienda"
+                    android:text="Abierta"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#FFFF"
+                    android:background="@drawable/button_shape"
+
+                    />
+
+                <View
+                    android:id="@+id/separador1"
+                    android:layout_width="match_parent"
+                    android:layout_height="3sp"
+                    android:layout_below="@+id/btn_abierto"
+                    android:layout_marginTop="5dp"
+                    android:background="#369e97" />
+
+                <ImageView
+                    android:id="@+id/imagen1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/default_image"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:maxWidth="80dp"
+                    android:maxHeight="60dp"
+                    android:scaleType="fitCenter"
+                    android:layout_below="@id/separador1"
+                    />
+
+                <ImageView
+                    android:id="@+id/imagen2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/default_image"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="20dp"
+                    android:maxWidth="80dp"
+                    android:maxHeight="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitCenter"
+                    android:layout_below="@id/separador1"
+                    android:layout_toRightOf="@id/imagen1"
+                    />
+
+                <ImageView
+                    android:id="@+id/imagen3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/default_image"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:maxWidth="80dp"
+                    android:maxHeight="60dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@id/separador1"
+                    android:layout_toRightOf="@id/imagen2"
+                    />
+
+
+            </RelativeLayout>
 
 
 
-    </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>
