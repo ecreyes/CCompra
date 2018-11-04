@@ -52,7 +52,7 @@ public class NavigationDrawer extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Fragment fragment = new ListaTiendasFragment();
+        Fragment fragment = new TiendasFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment).commit();
         navigationView.getMenu().getItem(1).setChecked(true);
     }

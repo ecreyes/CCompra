@@ -22,11 +22,14 @@ import java.util.List;
  * specified {@link OnFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class TiendasRecyclerViewAdapter extends RecyclerView.Adapter<TiendasRecyclerViewAdapter.ViewHolder> {
+public class TiendasRecyclerViewAdapter extends RecyclerView.Adapter<TiendasRecyclerViewAdapter.ViewHolder>
+    implements View.OnClickListener {
 
     private ArrayList<Tienda> mTiendas;
     Context mContext;
     private OnFragmentInteractionListener mListener;
+
+    private View.OnClickListener listener;
 
     public TiendasRecyclerViewAdapter(ArrayList<Tienda> tiendas, Context mContext) {
         this.mTiendas = tiendas;
@@ -37,6 +40,7 @@ public class TiendasRecyclerViewAdapter extends RecyclerView.Adapter<TiendasRecy
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_tiendas, parent, false);
+        view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
@@ -67,6 +71,18 @@ public class TiendasRecyclerViewAdapter extends RecyclerView.Adapter<TiendasRecy
     @Override
     public int getItemCount() {
         return mTiendas.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(listener!=null){
+            listener.onClick(v);
+        }
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

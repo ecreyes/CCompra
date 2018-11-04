@@ -2,11 +2,11 @@ package com.example.ecreyes.ccompra;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -19,8 +19,6 @@ import android.widget.EditText;
 
 import com.example.ecreyes.ccompra.Objetos.FirebaseReferences;
 import com.example.ecreyes.ccompra.Objetos.Tienda;
-import com.example.ecreyes.ccompra.dummy.DummyContent;
-import com.example.ecreyes.ccompra.dummy.DummyContent.DummyItem;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +27,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -103,6 +100,7 @@ public class TiendasFragment extends Fragment {
 
 
 
+
         return view;
     }
 
@@ -144,6 +142,28 @@ public class TiendasFragment extends Fragment {
                     }
                     TiendasRecyclerViewAdapter mTadapter = new TiendasRecyclerViewAdapter(tiendas, getContext());
                     //Log.i("mAC/mRe", String.valueOf(getContext()));
+                    mTadapter.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String nombreTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getNombre();
+                            String categoriaTienda= tiendas.get(mRecycler.getChildAdapterPosition(v)).getCategoria();
+                            String descripcionTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getDescripcion();
+                            String uriTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getUri();
+                            boolean estadoTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).isEstado();
+
+                            Intent myintent = new Intent(view.getContext(),DetalleTienda.class);
+                            myintent.putExtra("keynombre",nombreTienda);
+                            myintent.putExtra("keycategoria",categoriaTienda);
+                            myintent.putExtra("keydescripcion",descripcionTienda);
+                            myintent.putExtra("keyuri",uriTienda);
+                            myintent.putExtra("keyestado",estadoTienda);
+
+
+                            myintent.putExtra("firstKeyName",nombreTienda);
+                            startActivityForResult(myintent,0);
+
+                        }
+                    });
                     mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
                     mRecycler.setAdapter(mTadapter);
                     mTadapter.notifyDataSetChanged();

@@ -27,8 +27,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.ecreyes.ccompra.Objetos.DetalleTienda;
-
 /** TODO: ELIMINAR ESTA ACTIVIDAD, la actual es TiendasFragment **/
 
 
