@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_gradient_drawable"
+    android:id="@+id/fragment_login"
+    tools:context=".LoginFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:src="@mipmap/ic_launcher_round" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linearlayout_shape"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            >
+
+            <EditText
+                android:id="@+id/et_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_editbox"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="Ingresa tu Email"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="#FFFF"
+                android:textColorHighlight="#FFFF"
+                android:textColorHint="#FFFF" />
+
+            <EditText
+                android:id="@+id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_editbox"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:hint="Ingresa tu Contraseña"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="#FFFF"
+                android:textColorHighlight="#FFFF"
+                android:textColorHint="#FFFF" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/button_shape"
+                android:text="Login"
+                android:textSize="15dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFF" />
+
+            <TextView android:id="@+id/link_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="Aún no tienes cuenta? Create una ahora!"
+                android:textColor="#FFFF"
+                android:gravity="center"
+                android:textSize="16dip"
+                android:linksClickable="true"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

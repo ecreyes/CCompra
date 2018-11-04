@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,14 +14,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.content.Intent;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.ecreyes.ccompra.Objetos.Categoria;
 import com.example.ecreyes.ccompra.Objetos.FirebaseReferences;
 import com.example.ecreyes.ccompra.Objetos.Tienda;
 import com.example.ecreyes.ccompra.Objetos.myCallBack;
@@ -37,12 +39,21 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import static android.content.ContentValues.TAG;
 
-public class AgregarTiendaFragment extends Fragment implements View.OnClickListener{
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link AgregarTiendaProfileFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link AgregarTiendaProfileFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class AgregarTiendaProfileFragment extends Fragment implements  View.OnClickListener, AdapterView.OnItemSelectedListener{
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     String TAG_TIENDA = "TIENDA";
     View v;
-    //variables para la base de datos
     DatabaseReference tiendaRef;
     FirebaseDatabase database;
     StorageReference mStorage;
@@ -59,20 +70,30 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
     Uri downloadUri;
     EditText ntienda;
     EditText ndescripcion;
-
-    //generado automaticamente
+    Spinner spinner;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
     private OnFragmentInteractionListener mListener;
-    //constructor vacío
-    public AgregarTiendaFragment() {
+
+    public AgregarTiendaProfileFragment() {
     }
 
-    //generado automaticamente
-    public static AgregarTiendaFragment newInstance(String param1, String param2) {
-        AgregarTiendaFragment fragment = new AgregarTiendaFragment();
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment AgregarTiendaProfileFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static AgregarTiendaProfileFragment newInstance(String param1, String param2) {
+        AgregarTiendaProfileFragment fragment = new AgregarTiendaProfileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -89,8 +110,6 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
         database = FirebaseDatabase.getInstance();
         tiendaRef = database.getReference(FirebaseReferences.TIENDA_REFERENCES);
         mProgressDialog = new ProgressDialog(getContext());
-
-        //generado automaticamente
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -106,19 +125,23 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
         addTienda = v.findViewById(R.id.btnTienda);
         ntienda = v.findViewById(R.id.nombreTienda);
         ndescripcion = v.findViewById(R.id.descripcionTienda);
+        spinner = v.findViewById(R.id.categoria_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.categoria_array, android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
         btn_subir.setOnClickListener(this);
         addTienda.setOnClickListener(this);
         return v;
     }
 
-    //generado automaticamente
+    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
 
-    //generado automaticamente
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -130,7 +153,6 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
         }
     }
 
-    //generado automaticamente
     @Override
     public void onDetach() {
         super.onDetach();
@@ -141,13 +163,7 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null){
-            String email =  user.getEmail();
-            Log.e(email,"Holaaaa");
-        }
-        else{
-            Log.e("Mala perca","Very Bad Perch");
-        }
+        alert.setTitle("Tienda agregada satisfactoriamente");
         switch (v.getId()){
             case R.id.btn_subir:
                 Intent intent = new Intent(Intent.ACTION_PICK);
@@ -161,7 +177,7 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
                     @Override
                     public void onCallback(int value) {
                         tiendaRef.child("idauto").setValue(value+1);
-                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"","aaaaa","Comida");
+                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"",user.getEmail(),spinner.getSelectedItem().toString());
                         tiendaRef.push().setValue(tienda);
                         ntienda.setText("");
                         ndescripcion.setText("");
@@ -170,13 +186,8 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
             default:
                 break;
         }
+        alert.create().show();
     }
-
-    public void showAlertDialog(View v){
-
-
-    }
-
 
     //método se ejecuta una vez que se carga la imagen.
     @Override
@@ -207,8 +218,10 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
                         mProgressDialog.dismiss();
                         downloadUri = task.getResult();
                         Log.d(TAG_TIENDA,downloadUri+"");
-                        Glide.with(AgregarTiendaFragment.this)
+                        Glide.with(AgregarTiendaProfileFragment.this)
                                 .load(downloadUri)
+                                .fitCenter()
+                                .centerCrop()
                                 .into(mImageView);
                     } else {
                         // Handle failures
@@ -219,7 +232,16 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
 
         }
     }
-
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
     public void readDataTienda(myCallBack myCallback){
         tiendaRef.child("idauto").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -234,8 +256,21 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
 
     }
 
-    //generado automaticamente
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String categoria = spinner.getSelectedItem().toString();
+        Toast.makeText(getContext(),categoria,Toast.LENGTH_LONG).show();
+    }
+
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
     public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
