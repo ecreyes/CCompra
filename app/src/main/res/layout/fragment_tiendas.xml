@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/miniTienda"
+        android:layout_width="122dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="13dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="28dp"
+        tools:srcCompat="@tools:sample/avatars[3]"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/t_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:text="Nombre Tienda"
+            tools:layout_editor_absoluteX="173dp"
+            tools:layout_editor_absoluteY="44dp" />
+
+        <TextView
+            android:id="@+id/t_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/t_name"
+            android:layout_alignLeft="@+id/t_name"
+            android:layout_marginTop="57dp"
+            android:text="Estado"
+            tools:layout_editor_absoluteX="173dp"
+            tools:layout_editor_absoluteY="74dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -154,7 +154,7 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
                     @Override
                     public void onCallback(int value) {
                         tiendaRef.child("idauto").setValue(value+1);
-                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"");
+                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"", "test@test.com");
                         tiendaRef.push().setValue(tienda);
                         ntienda.setText("");
                         ndescripcion.setText("");
@@ -203,8 +203,6 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
                         Log.d(TAG_TIENDA,downloadUri+"");
                         Glide.with(AgregarTiendaFragment.this)
                                 .load(downloadUri)
-                                .fitCenter()
-                                .centerCrop()
                                 .into(mImageView);
                     } else {
                         // Handle failures

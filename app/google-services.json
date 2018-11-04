@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "852815391247-84pjavirijedvlktlbualn64kdc1ef9p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecreyes.ccompra",
+            "certificate_hash": "69aef296684c5035e4f124cf119d7fcb004d92be"
+          }
+        },
+        {
           "client_id": "852815391247-fr3b0bs38u7hur7emh3638h4obu9tr2b.apps.googleusercontent.com",
           "client_type": 3
         }

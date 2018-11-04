@@ -152,8 +152,6 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG,downloadUri+"");
                         Glide.with(MainActivity.this)
                                 .load(downloadUri)
-                                .fitCenter()
-                                .centerCrop()
                                 .into(mImageView);
                     } else {
                         // Handle failures
