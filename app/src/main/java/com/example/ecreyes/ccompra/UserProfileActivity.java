@@ -15,7 +15,8 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class UserProfileActivity extends AppCompatActivity implements AgregarTiendaProfileFragment.OnFragmentInteractionListener {
+public class UserProfileActivity extends AppCompatActivity implements AgregarTiendaProfileFragment.OnFragmentInteractionListener,
+        ListaTiendasProfileFragment.OnFragmentInteractionListener {
 
     private TextView mTextMessage;
 
@@ -25,14 +26,14 @@ public class UserProfileActivity extends AppCompatActivity implements AgregarTie
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
-            fragment = new AgregarTiendaProfileFragment();
-            loadFragment(fragment);
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     fragment = new AgregarTiendaProfileFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_dashboard:
+                    fragment = new ListaTiendasProfileFragment();
+                    loadFragment(fragment);
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
