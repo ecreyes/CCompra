@@ -1,5 +1,6 @@
 package com.example.ecreyes.ccompra;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -36,6 +37,9 @@ public class UserProfileActivity extends AppCompatActivity implements AgregarTie
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_notifications:
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(getBaseContext(),NavigationDrawer.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
