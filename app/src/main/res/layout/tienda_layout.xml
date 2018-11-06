@@ -29,11 +29,10 @@
                 <ImageView
                     android:id="@+id/imagen_tienda"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="250dp"
                     android:layout_marginTop="0dp"
                     android:adjustViewBounds="true"
-
-                    android:maxWidth="40dp"
+                    android:maxHeight="250dp"
                     android:src="@drawable/default_image2"
                     tools:cropToPadding="false" />
 
@@ -148,50 +147,7 @@
                     android:layout_marginTop="5dp"
                     android:background="#369e97" />
 
-                <ImageView
-                    android:id="@+id/imagen1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/default_image"
-                    android:adjustViewBounds="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:maxWidth="80dp"
-                    android:maxHeight="60dp"
-                    android:scaleType="fitCenter"
-                    android:layout_below="@id/separador1"
-                    />
 
-                <ImageView
-                    android:id="@+id/imagen2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/default_image"
-                    android:adjustViewBounds="true"
-                    android:layout_marginTop="20dp"
-                    android:maxWidth="80dp"
-                    android:maxHeight="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:scaleType="fitCenter"
-                    android:layout_below="@id/separador1"
-                    android:layout_toRightOf="@id/imagen1"
-                    />
-
-                <ImageView
-                    android:id="@+id/imagen3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/default_image"
-                    android:adjustViewBounds="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:maxWidth="80dp"
-                    android:maxHeight="60dp"
-                    android:scaleType="fitCenter"
-                    android:layout_marginLeft="20dp"
-                    android:layout_below="@id/separador1"
-                    android:layout_toRightOf="@id/imagen2"
-                    />
 
 
             </RelativeLayout>
