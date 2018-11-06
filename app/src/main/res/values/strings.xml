@@ -34,6 +34,7 @@
         <item>Tecnología</item>
         <item>Arte</item>
         <item>Reparaciones</item>
+        <item>Otros </item>
     </string-array>
     <string name="title_activity_editar_tienda">EditarTiendaActivity</string>
 
