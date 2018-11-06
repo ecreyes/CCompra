@@ -15,6 +15,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
 public class NavigationDrawer extends AppCompatActivity
 
         implements  NavigationView.OnNavigationItemSelectedListener,
@@ -25,7 +29,8 @@ public class NavigationDrawer extends AppCompatActivity
                     RegistroFragment.OnFragmentInteractionListener,
                     TiendasFragment.OnFragmentInteractionListener,
                     LoginFragment.OnFragmentInteractionListener{
-          
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +105,7 @@ public class NavigationDrawer extends AppCompatActivity
             fragment = new CategoriaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
-        } else if (id == R.id.tienda_agregar) {
+        } else if (id == R.id.tienda_agregar && user!=null) {
             fragment = new AgregarTiendaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
@@ -108,17 +113,6 @@ public class NavigationDrawer extends AppCompatActivity
             fragment = new TiendasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
-
-        } else if (id == R.id.vista_tienda) {
-            fragment = new VistaTiendaFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
-         /*<<<<<<< design
-        } else if (id == R.id.lista_categoria){
-            fragment = new ListaCategoriaFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
-
-            FragmentSeleccionado = true;
-               ======= */
         } else if (id == R.id.registro){
             fragment = new RegistroFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
@@ -128,6 +122,7 @@ public class NavigationDrawer extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment);
             FragmentSeleccionado = true;
         }
+
         if (FragmentSeleccionado){
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,fragment).commit();
         }
