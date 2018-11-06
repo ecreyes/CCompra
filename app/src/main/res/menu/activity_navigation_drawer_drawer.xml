@@ -20,7 +20,6 @@
             android:title="@string/agregar_tienda"
             android:visible="false"/>
 
-
     </group>
 
 
