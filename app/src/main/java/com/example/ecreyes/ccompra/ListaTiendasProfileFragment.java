@@ -103,7 +103,10 @@ public class ListaTiendasProfileFragment extends Fragment {
         else{
             Log.e("Mala perca","Very Bad Perch");
         }
-        database.getReference("Tienda").orderByChild("email").equalTo(user.getEmail()).addValueEventListener(new ValueEventListener() {
+        database.getReference("Tienda").
+                orderByChild("email").
+                equalTo(user.getEmail()).
+                addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 tiendas.removeAll(tiendas);
