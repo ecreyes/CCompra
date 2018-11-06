@@ -51,20 +51,45 @@ public class ListaTiendasProfileAdapter extends RecyclerView.Adapter<ListaTienda
 
         TextView textViewTienda;
         Switch mswitch;
+        TextView textViewEliminar;
 
         public TiendaHolder(View itemView)  {
             super(itemView);
+
             textViewTienda = (TextView) itemView.findViewById(R.id.textview_tiendas);
+            textViewEliminar = (TextView) itemView.findViewById(R.id.elim_tienda);
+            textViewEliminar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Tienda");
+                    Integer pos = getAdapterPosition();
+                    Tienda tiendap = tiendas.get(pos);
+                    Log.e("Clickeadooo","Gran Tejedora");
+                    Query query = database.orderByChild("id").equalTo(tiendap.getId());
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot datos: dataSnapshot.getChildren()){
+                                datos.getRef().removeValue();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                        }
+                    });
+                }
+            });
             mswitch = (Switch) itemView.findViewById(R.id.estado_switch);
             mswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    DatabaseReference database = FirebaseDatabase.getInstance().getReference("Tienda");
                     Integer pos = getAdapterPosition();
                     Tienda tiendap = tiendas.get(pos);
                     if (isChecked) {
                         Log.e("ExistenciaSi", tiendap.getNombre());
-                        DatabaseReference database = FirebaseDatabase.getInstance().getReference("Tienda");
-                        Query query = database.orderByChild("nombre").equalTo(tiendap.getNombre());
+                        Query query = database.orderByChild("id").equalTo(tiendap.getId());
+
                         query.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -80,7 +105,6 @@ public class ListaTiendasProfileAdapter extends RecyclerView.Adapter<ListaTienda
 
                    } else {
                         Log.e("ExistenciaNO", "Gran Tejedora");
-                        DatabaseReference database = FirebaseDatabase.getInstance().getReference("Tienda");
                         Query query = database.orderByChild("id").equalTo(tiendap.getId());
                         query.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
