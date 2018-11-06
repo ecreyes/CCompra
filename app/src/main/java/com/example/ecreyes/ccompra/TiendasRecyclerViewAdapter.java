@@ -1,6 +1,7 @@
 package com.example.ecreyes.ccompra;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,6 +53,7 @@ public class TiendasRecyclerViewAdapter extends RecyclerView.Adapter<TiendasRecy
         }
         else {
             holder.t_status.setText("Cerrado");
+            holder.t_status.setTextColor(Color.parseColor("#d81b60"));
         }
         Glide.with(mContext).load(mTiendas.get(position).getUri()).into(holder.t_img);
 

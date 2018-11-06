@@ -1,9 +1,12 @@
 package com.example.ecreyes.ccompra;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +18,7 @@ public class DetalleTienda extends AppCompatActivity {
     TextView ubicacion;
     TextView descripcion;
     ImageView imagen;
+    Button estado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,13 @@ public class DetalleTienda extends AppCompatActivity {
         imagen = findViewById(R.id.imagen_tienda);
         titulo.setText(keynombre);
         descripcion.setText(keydescripcion);
+        if (!keyestado){
+            estado = findViewById(R.id.btn_abierto);
+            estado.setText("Cerrado");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                estado.setBackground(this.getResources().getDrawable(R.drawable.button_shape_red));
+            }
+        }
         Glide.with(this)
                 .load(keyuri)
                 .into(imagen);
