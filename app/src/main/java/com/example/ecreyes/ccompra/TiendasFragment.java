@@ -99,8 +99,6 @@ public class TiendasFragment extends Fragment {
         });
 
 
-
-
         return view;
     }
 

@@ -143,12 +143,12 @@ public class LoginFragment extends Fragment implements  View.OnClickListener{
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(getContext(), "Usuario Logeado Satisfactoriamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Inicio de sesión satisfactorio", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getContext(), UserProfileActivity.class));
                 }
                 else{
                     FirebaseAuthException e = (FirebaseAuthException )task.getException();
-                    Toast.makeText(getContext(), "Failed Registration: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Error: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

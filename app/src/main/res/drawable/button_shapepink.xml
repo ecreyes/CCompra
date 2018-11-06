@@ -3,7 +3,7 @@
     <stroke
         android:width="0dp"
         android:color="#ffffff" />
-    <corners android:radius="200dp" />
+    <corners android:radius="100dp" />
 
     <padding
         android:bottom="0dp"
@@ -13,8 +13,8 @@
 
     <gradient
         android:angle="0"
-        android:startColor="#0009b9"
-        android:endColor="#0009b9"
+        android:startColor="#D81B60"
+        android:endColor="#D81B60"
         android:type="linear" />
 
 </shape>
