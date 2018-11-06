@@ -47,6 +47,8 @@ public class UserProfileActivity extends AppCompatActivity implements AgregarTie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        Fragment fragment;
+        loadFragment(new ListaTiendasProfileFragment());
         if (user != null){
             String email =  user.getEmail();
             Log.e(email,"Holaaaa");
