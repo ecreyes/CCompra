@@ -105,11 +105,11 @@ public class NavigationDrawer extends AppCompatActivity
             fragment = new CategoriaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
-        } else if (id == R.id.tienda_agregar && user!=null) {
+        } /*else if (id == R.id.tienda_agregar && user!=null) {
             fragment = new AgregarTiendaFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
-        } else if (id == R.id.tienda_lista) {
+        } */else if (id == R.id.tienda_lista) {
             fragment = new TiendasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor, fragment);
             FragmentSeleccionado = true;
