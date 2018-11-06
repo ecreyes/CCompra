@@ -34,10 +34,8 @@ public class UserProfileActivity extends AppCompatActivity implements AgregarTie
                 case R.id.navigation_dashboard:
                     fragment = new ListaTiendasProfileFragment();
                     loadFragment(fragment);
-                    mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
             return false;
