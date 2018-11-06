@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -181,6 +182,9 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
                         tiendaRef.push().setValue(tienda);
                         ntienda.setText("");
                         ndescripcion.setText("");
+                        Fragment fragment;
+                        fragment = new ListaTiendasProfileFragment();
+                        loadFragment(fragment);
                     }
                 });
             default:
@@ -188,7 +192,13 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
         }
         alert.create().show();
     }
+    private  void loadFragment(Fragment fragment){
 
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.container,fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
     //método se ejecuta una vez que se carga la imagen.
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
