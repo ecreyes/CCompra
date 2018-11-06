@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/miniProduct"
+        android:layout_width="89dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="19dp"
+        android:clickable="true"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="28dp"
+        tools:srcCompat="@tools:sample/avatars[3]" />
+
+    <LinearLayout
+        android:layout_width="190dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

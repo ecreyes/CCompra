@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,7 @@
     tools:context=".AgregarTiendaProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="0dp">
 
@@ -27,7 +28,7 @@
                 android:layout_width="206dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/button_selector2"
                 android:drawable="@drawable/button_shape"
@@ -39,8 +40,8 @@
 
             <ImageView
                 android:id="@+id/fimg"
-                android:layout_width="117dp"
-                android:layout_height="116dp"
+                android:layout_width="95dp"
+                android:layout_height="74dp"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:src="@drawable/ic_menu_camera" />
@@ -55,39 +56,39 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:hint="@string/nombre_tienda" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <ScrollView
+        <EditText
+            android:id="@+id/descripcionTienda"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/descripcionTienda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                android:hint="Descripción"
-                android:inputType="" />
-
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:hint="Descripción"
+            android:inputType="" />
 
         </ScrollView>
 
-        <Spinner
-            android:id="@+id/categoria_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/categoria_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
         <Button
             android:id="@+id/btnTienda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
             android:background="@drawable/button_selector"
             android:text="Añadir Tienda"
             android:textAllCaps="false"
             android:textColor="#FFFF" />
-
-
     </LinearLayout>
-
 </FrameLayout>

@@ -30,7 +30,7 @@
         tools:listitem="@layout/fragment_tiendas" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/search_btn"
         android:layout_width="37dp"
         android:layout_height="35dp"
         android:layout_alignBottom="@+id/search_text"
