@@ -72,6 +72,7 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
     EditText ntienda;
     EditText ndescripcion;
     Spinner spinner;
+    EditText nubicacion;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -127,6 +128,7 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
         ntienda = v.findViewById(R.id.nombreTienda);
         ndescripcion = v.findViewById(R.id.descripcionTienda);
         spinner = v.findViewById(R.id.categoria_spinner);
+        nubicacion = v.findViewById(R.id.ubicacionTienda);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.categoria_array, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
@@ -176,7 +178,10 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
                     @Override
                     public void onCallback(int value) {
                         tiendaRef.child("idauto").setValue(value+1);
-                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"",user.getEmail(),spinner.getSelectedItem().toString());
+                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),
+                                ndescripcion.getText().toString(),downloadUri+"",user.getEmail(),
+                                spinner.getSelectedItem().toString(),
+                                nubicacion.getText().toString(), "");
                         tiendaRef.push().setValue(tienda);
                         ntienda.setText("");
                         ndescripcion.setText("");

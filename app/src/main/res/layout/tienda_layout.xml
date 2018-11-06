@@ -70,6 +70,7 @@
                     android:layout_below="@id/titulo_tienda"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-4dp"
+                    android:layout_marginBottom="5dp"
                     android:layout_toRightOf="@id/imagen_avatar"
                     android:text="Ubicación" />
 
@@ -139,21 +140,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_below="@+id/btn_abierto"
-                    android:layout_marginTop="101dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="57dp"
                     android:background="#369e97"
                     android:padding="10dp"
                     android:paddingTop="10dp" />
 
                 <TextView
                     android:id="@+id/estado_tienda"
-                    android:layout_width="321dp"
+                    android:layout_width="322dp"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@+id/separador1"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="96dp"
-                    android:layout_marginEnd="14dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="88dp"
+                    android:layout_marginEnd="11dp"
+                    android:padding="10dp"
                     android:text="Quedan pocas hamburguesas!"
-                    android:textStyle="italic"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
 

@@ -148,6 +148,8 @@ public class TiendasFragment extends Fragment {
                             String descripcionTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getDescripcion();
                             String uriTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getUri();
                             boolean estadoTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).isEstado();
+                            String ubicacionTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getUbicacion();
+                            String alertaTienda = tiendas.get(mRecycler.getChildAdapterPosition(v)).getAlerta();
 
                             Intent myintent = new Intent(view.getContext(),DetalleTienda.class);
                             myintent.putExtra("keynombre",nombreTienda);
@@ -155,7 +157,8 @@ public class TiendasFragment extends Fragment {
                             myintent.putExtra("keydescripcion",descripcionTienda);
                             myintent.putExtra("keyuri",uriTienda);
                             myintent.putExtra("keyestado",estadoTienda);
-
+                            myintent.putExtra("keyubicacion", ubicacionTienda);
+                            myintent.putExtra("keyalerta", alertaTienda);
 
                             myintent.putExtra("firstKeyName",nombreTienda);
                             startActivityForResult(myintent,0);

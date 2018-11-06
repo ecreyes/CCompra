@@ -161,7 +161,8 @@ public class AgregarTiendaFragment extends Fragment implements View.OnClickListe
                     @Override
                     public void onCallback(int value) {
                         tiendaRef.child("idauto").setValue(value+1);
-                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),ndescripcion.getText().toString(),downloadUri+"","aaaaa","Comida");
+                        Tienda tienda = new Tienda(value+1,true,ntienda.getText().toString(),
+                                ndescripcion.getText().toString(),downloadUri+"","aaaaa","Comida", "", "");
                         tiendaRef.push().setValue(tienda);
                         ntienda.setText("");
                         ndescripcion.setText("");

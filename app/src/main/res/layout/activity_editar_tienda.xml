@@ -1,70 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".EditarTiendaActivity">
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context=".AgregarTiendaProfileFragment"
+    tools:ignore="UselessParent">
+
+    <EditText
+        android:id="@+id/nombreTienda"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:ignore="UselessParent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_editbox_gray"
+        android:hint="@string/nombre_tienda"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#028577"
-            android:gravity="center"
-            android:text="@string/a_adir_tienda"
-            android:textColor="#FFFF"
-            android:textSize="24sp"
+    <EditText
+        android:id="@+id/descripcionTienda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_editbox_gray"
+        android:hint="Descripción"
+        android:inputType=""
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp" />
 
-            tools:background="@drawable/ic_launcher_background" />
+    <EditText
+        android:id="@+id/ubicacionTienda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_editbox_gray"
+        android:hint="Ubicación"
+        android:inputType=""
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp" />
 
+    <EditText
+        android:id="@+id/alerta_tienda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_editbox_gray"
+        android:hint="Informaciones de la tienda"
+        android:inputType=""
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp" />
 
-        <EditText
-            android:id="@+id/nombreTienda"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/nombre_tienda" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/descripcionTienda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                android:hint="Descripción"
-                android:inputType="" />
-        </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="94dp">
 
         <Spinner
             android:id="@+id/categoria_spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="48dp"
+            android:layout_below="@+id/arrow_down"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="-35dp"
+            android:background="@drawable/shape_editbox_gray" />
 
-        <Button
-            android:id="@+id/btnTienda"
-            android:layout_width="match_parent"
+
+        <ImageView
+            android:id="@+id/arrow_down"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/button_selector"
-            android:text="Añadir Tienda"
-            android:textAllCaps="false"
-            android:textColor="#FFFF" />
-    </LinearLayout>
+            android:layout_alignParentTop="false"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="false"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:clickable="false"
+            android:cropToPadding="false"
+            android:src="@drawable/ic_arrow_down_btn"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Categoria"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btnTienda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/button_selector"
+        android:text="Editar Tienda"
+        android:textAllCaps="false"
+        android:textColor="#FFFF" />
+
+</LinearLayout>
+</FrameLayout>

@@ -38,11 +38,18 @@ public class EditarTiendaActivity extends Activity {
         String categoria;
         String uri;
         String email;
+        String ubicacion;
+        String alerta;
         Button boton;
         boton = findViewById(R.id.btnTienda);
         EditText nombre_tienda;
         EditText descripcion_tienda;
-        descripcion_tienda =findViewById(R.id.descripcionTienda);
+        EditText ubicacion_tienda;
+        EditText alerta_tienda;
+        descripcion_tienda = findViewById(R.id.descripcionTienda);
+        ubicacion_tienda = findViewById(R.id.ubicacionTienda);
+        alerta_tienda = findViewById(R.id.alerta_tienda);
+
         spinner.setAdapter(adapter);
         nombre_tienda = findViewById(R.id.nombreTienda);
         int id_tienda = getIntent().getIntExtra("tienda",122);
@@ -56,10 +63,14 @@ public class EditarTiendaActivity extends Activity {
                     try{
                         Tienda tienda = snapshot.getValue(Tienda.class);
                         String nombre = tienda.getNombre();
-                        nombre_tienda.setText(nombre.toString());
+                        nombre_tienda.setText(nombre);
                         String descripcion = tienda.getDescripcion();
                         descripcion_tienda.setText(descripcion);
                         String email = tienda.getEmail();
+                        String ubicacion = tienda.getUbicacion();
+                        ubicacion_tienda.setText(ubicacion);
+                        String alerta = tienda.getAlerta();
+                        alerta_tienda.setText(alerta);
                         String uri = tienda.getUri();
                         boton.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -76,8 +87,11 @@ public class EditarTiendaActivity extends Activity {
                                     public void onCancelled(@NonNull DatabaseError databaseError) {
                                     }
                                 });
-                                Tienda tienda = new Tienda(id_tienda,true,nombre_tienda.getText().toString(),descripcion_tienda.getText().toString(),
-                                        uri,email,spinner.getSelectedItem().toString());
+                                Tienda tienda = new Tienda(id_tienda,true,nombre_tienda.getText().
+                                        toString(),descripcion_tienda.getText().toString(),
+                                        uri, email, spinner.getSelectedItem().toString(),
+                                        ubicacion_tienda.getText().toString(),
+                                        alerta_tienda.getText().toString());
                                 tiendaRef.push().setValue(tienda);
                                 startActivity(intent);
                             }

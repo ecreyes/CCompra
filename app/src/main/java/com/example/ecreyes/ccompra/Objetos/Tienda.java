@@ -8,10 +8,13 @@ public class Tienda {
     private String uri;
     private String email;
     private String categoria;
+    private String ubicacion;
+    private String alerta;
 
     public Tienda(){}
 
-    public Tienda(int id,boolean estado,String nombre,String descripcion,String uri, String email, String categoria){
+    public Tienda(int id, boolean estado, String nombre, String descripcion, String uri, String email,
+                  String categoria, String ubicacion, String alerta){
         this.id = id;
         this.estado = estado;
         this.nombre = nombre;
@@ -19,6 +22,8 @@ public class Tienda {
         this.uri = uri;
         this.email = email;
         this.categoria = categoria;
+        this.ubicacion = ubicacion;
+        this.alerta = alerta;
     }
 
     public int getId() {
@@ -68,4 +73,20 @@ public class Tienda {
     public  void setCategoria(String categoria) {this.categoria = categoria;}
 
     public String getCategoria() {return  categoria;}
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getAlerta() {
+        return alerta;
+    }
+
+    public void setAlerta(String alerta) {
+        this.alerta = alerta;
+    }
 }

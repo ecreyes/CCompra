@@ -60,25 +60,33 @@
             android:paddingRight="10dp"
             android:paddingBottom="10dp" />
 
-        <ScrollView
+        <EditText
+            android:id="@+id/descripcionTienda"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_editbox_gray"
+            android:hint="Descripción"
+            android:inputType=""
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
 
-            <EditText
-                android:id="@+id/descripcionTienda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_editbox_gray"
-                android:hint="Descripción"
-                android:inputType=""
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp" />
-
-        </ScrollView>
+        <EditText
+            android:id="@+id/ubicacionTienda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_editbox_gray"
+            android:hint="Ubicación"
+            android:inputType=""
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
