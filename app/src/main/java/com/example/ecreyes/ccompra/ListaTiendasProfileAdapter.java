@@ -1,5 +1,7 @@
 package com.example.ecreyes.ccompra;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -52,12 +54,26 @@ public class ListaTiendasProfileAdapter extends RecyclerView.Adapter<ListaTienda
         TextView textViewTienda;
         Switch mswitch;
         TextView textViewEliminar;
+        TextView textViewEditar;
 
         public TiendaHolder(View itemView)  {
             super(itemView);
 
             textViewTienda = (TextView) itemView.findViewById(R.id.textview_tiendas);
             textViewEliminar = (TextView) itemView.findViewById(R.id.elim_tienda);
+            textViewEditar = itemView.findViewById(R.id.edit_tienda);
+            textViewEditar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DatabaseReference database_edicion = FirebaseDatabase.getInstance().getReference("Tienda");
+                    Integer pos = getAdapterPosition();
+                    Tienda tiendap = tiendas.get(pos);
+                    int id_tienda = tiendap.getId();
+                    Intent intent = new Intent((v.getContext()),EditarTiendaActivity.class);
+                    intent.putExtra("tienda",id_tienda);
+                    v.getContext().startActivity(intent);
+                }
+            });
             textViewEliminar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
