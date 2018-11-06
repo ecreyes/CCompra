@@ -23,13 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MarketListActivity"></activity>
-        <activity android:name=".DetalleTienda"></activity>
+        <activity android:name=".MarketListActivity" />
+        <activity android:name=".DetalleTienda" />
         <activity
             android:name=".UserProfileActivity"
             android:label="@string/title_activity_user_profile"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".EditarTiendaActivity"
+            android:label="@string/title_activity_editar_tienda"></activity>
     </application>
 
 </manifest>
