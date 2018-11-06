@@ -23,8 +23,8 @@
     <string name="a_adir_tienda">Añadir tienda</string>
     <string name="nombre_tienda">Nombre tienda</string>
     <string name="title_activity_recycler">RecyclerActivity</string>
-    <string name="title_activity_user_profile">UserProfileActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_activity_user_profile">Panel de Tiendas</string>
+    <string name="title_home">Crear tienda</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="categoria_prompt">Escoja una Categoria</string>

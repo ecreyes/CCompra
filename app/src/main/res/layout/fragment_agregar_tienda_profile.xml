@@ -12,6 +12,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         tools:context=".AgregarTiendaProfileFragment"
         tools:ignore="UselessParent">
@@ -33,7 +34,7 @@
                 android:background="@drawable/button_selector2"
                 android:drawable="@drawable/button_shape"
                 android:gravity="center"
-                android:text="@string/subir_imagen"
+                android:text="Seleccionar Imagen"
                 android:textAllCaps="false"
                 android:textColor="#FFFF"
                 android:textStyle="bold" />
@@ -51,32 +52,79 @@
             android:id="@+id/nombreTienda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:hint="@string/nombre_tienda" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:background="@drawable/shape_editbox_gray"
+            android:hint="@string/nombre_tienda"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
 
-        <EditText
-            android:id="@+id/descripcionTienda"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:hint="Descripción"
-            android:inputType="" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/descripcionTienda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_editbox_gray"
+                android:hint="Descripción"
+                android:inputType=""
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp" />
 
         </ScrollView>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="94dp">
 
             <Spinner
                 android:id="@+id/categoria_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="48dp"
+                android:layout_below="@+id/arrow_down"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-35dp"
+                android:background="@drawable/shape_editbox_gray" />
+
+
+            <ImageView
+                android:id="@+id/arrow_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="false"
+                android:layout_marginTop="39dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:cropToPadding="false"
+                android:src="@drawable/ic_arrow_down_btn"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="Categoria"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
 
         <Button
@@ -85,10 +133,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="14dp"
             android:background="@drawable/button_selector"
             android:text="Añadir Tienda"
             android:textAllCaps="false"
             android:textColor="#FFFF" />
+
     </LinearLayout>
 </FrameLayout>

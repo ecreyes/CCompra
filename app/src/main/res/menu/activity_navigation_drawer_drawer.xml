@@ -14,11 +14,11 @@
             android:id="@+id/tienda_lista"
             android:icon="@drawable/ic_menu_list"
             android:title="@string/lista_de_tiendas" />
-        <!--item
+        <item
             android:id="@+id/tienda_agregar"
             android:icon="@drawable/ic_add_btn"
-            android:title="@string/agregar_tienda" /-->
-
+            android:title="@string/agregar_tienda"
+            android:visible="false"/>
 
     </group>
 
