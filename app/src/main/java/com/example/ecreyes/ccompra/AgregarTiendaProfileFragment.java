@@ -162,9 +162,7 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
 
     @Override
     public void onClick(View v) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        alert.setTitle("Tienda agregada satisfactoriamente");
         switch (v.getId()){
             case R.id.btn_subir:
                 Intent intent = new Intent(Intent.ACTION_PICK);
@@ -190,7 +188,6 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
             default:
                 break;
         }
-        alert.create().show();
     }
     private  void loadFragment(Fragment fragment){
 
