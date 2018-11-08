@@ -1,6 +1,7 @@
 package com.example.ecreyes.ccompra;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.ecreyes.ccompra.Objetos.Categoria;
 import com.example.ecreyes.ccompra.Objetos.FirebaseReferences;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -86,6 +89,14 @@ public class ListaCategoriaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_lista_categoria, container, false);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            String email =  user.getEmail();
+        }
+        else{
+            Intent intent = new Intent(getContext(),NavigationDrawer.class);
+            startActivity(intent);
+        }
         rv = (RecyclerView) v.findViewById(R.id.recycler);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this.getActivity()));

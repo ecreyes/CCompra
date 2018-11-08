@@ -207,7 +207,7 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==GALLERY_INTENT && resultCode== Activity.RESULT_OK){
             mProgressDialog.setTitle("Subiendo...");
-            mProgressDialog.setMessage("subiendo foto a firebase");
+            mProgressDialog.setMessage("Espere unos segundos...");
             mProgressDialog.setCancelable(false);
             mProgressDialog.show();
             Uri uri = data.getData();
@@ -269,7 +269,6 @@ public class AgregarTiendaProfileFragment extends Fragment implements  View.OnCl
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String categoria = spinner.getSelectedItem().toString();
-        Toast.makeText(getContext(),categoria,Toast.LENGTH_LONG).show();
     }
 
 

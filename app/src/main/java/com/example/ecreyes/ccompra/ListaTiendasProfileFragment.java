@@ -1,6 +1,7 @@
 package com.example.ecreyes.ccompra;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -87,6 +88,14 @@ public class ListaTiendasProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            String email =  user.getEmail();
+        }
+        else{
+            Intent intent = new Intent(getContext(),NavigationDrawer.class);
+            startActivity(intent);
+        }
         v = inflater.inflate(R.layout.fragment_lista_tiendas_profile, container, false);
         rv = (RecyclerView) v.findViewById(R.id.recycler_tiendas_profile);
         rv.setHasFixedSize(true);
@@ -95,14 +104,6 @@ public class ListaTiendasProfileFragment extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         adapter = new ListaTiendasProfileAdapter(tiendas);
         rv.setAdapter(adapter);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null){
-            String email =  user.getEmail();
-            Log.e(email,"Holaaaa");
-        }
-        else{
-            Log.e("Mala perca","Very Bad Perch");
-        }
         database.getReference("Tienda").
                 orderByChild("email").
                 equalTo(user.getEmail()).

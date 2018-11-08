@@ -54,10 +54,10 @@ public class UserProfileActivity extends AppCompatActivity implements AgregarTie
 
         if (user != null){
             String email =  user.getEmail();
-            Log.e(email,"Holaaaa");
         }
         else{
-                Log.e("Mala perca","Very Bad Perch");
+            Intent intent = new Intent(this,NavigationDrawer.class);
+            startActivity(intent);
         }
 
         mTextMessage = (TextView) findViewById(R.id.message);
